@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name" translatable="false">RamadanMotionLayout</string>
+    <string name="ramadan" translatable="false"> Ramadan 2023 </string>
+    <string name="ramadnhistory"> 1 Ramadan 1444</string>
+</resources>

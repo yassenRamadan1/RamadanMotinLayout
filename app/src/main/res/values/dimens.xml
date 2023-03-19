@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="normalMargin">16dp</dimen>
+    <dimen name="normalPadding">16dp</dimen>
+    <dimen name="smallMargin">8dp</dimen>
+    <dimen name="smallPadding">8dp</dimen>
+    <dimen name="largeFont">28dp</dimen>
+    <dimen name="mediumFont">24sp</dimen>
+    <dimen name="normalFontSize">18sp</dimen>
+</resources>

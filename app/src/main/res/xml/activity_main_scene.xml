@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"  xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/ramadanmain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            />
+        <Constraint
+            android:id="@+id/ramdankareem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+        <Constraint
+            android:id="@+id/ramadanConcept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:alpha="0.1"
+            />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/dinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:visibilityMode="ignore" />
+        <Constraint
+            android:id="@+id/ramadanmobarak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normalMargin"
+            android:padding="@dimen/normalPadding"
+            motion:visibilityMode="ignore"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/dinner" />
+
+        <Constraint
+            android:id="@+id/ramadanmain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:visibility="gone"
+            />
+        <Constraint
+            android:id="@+id/ramadanConcept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:visibility="gone"
+            />
+        <Constraint
+            android:id="@+id/ramdankareem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="gone"
+            />
+        <Constraint
+            android:id="@+id/ramdantime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            />
+        <Constraint
+            android:id="@+id/swipe_for_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/ramdantime" />
+        <Constraint
+            android:id="@+id/next_prayer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:visibilityMode="ignore"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/ramadanmobarak" />
+    </ConstraintSet>
+
+    <Transition
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@+id/start"
+        motion:duration="2000">
+        <OnSwipe
+            app:dragDirection="dragUp"
+      />
+        <KeyFrameSet>
+            <KeyAttribute
+                motion:framePosition="0"
+                app:motionTarget="@id/dinner"
+                android:translationY="-100dp"/>
+            <KeyAttribute
+                motion:framePosition="0"
+                app:motionTarget="@id/dinner"
+                android:translationY="-100dp"/>
+            <KeyAttribute
+                motion:framePosition="100"
+                app:motionTarget="@id/dinner"
+                android:translationY="0dp"/>
+            <KeyAttribute
+                motion:framePosition="0"
+                app:motionTarget="@id/ramadanmobarak"
+                android:translationY="-100dp"/>
+            <KeyAttribute
+                motion:framePosition="100"
+                app:motionTarget="@id/ramadanmobarak"
+                android:translationY="0dp"/>
+
+
+        </KeyFrameSet>
+    </Transition>
+</MotionScene>
